@@ -40,15 +40,11 @@ const prepend = (value, rest) => {
     return {value: value, rest: rest}
 }
 
-const nth = (list, idx) => {
-    return listToArray(list)[idx];
-}
-
-// function nth(list, n) {
-//     if (!list) return undefined;
-//     else if (n == 0) return list.value;
-//     else return nth(list.rest, n - 1);
-//   }
+function nth(list, n) {
+    if (!list) return undefined;
+    else if (n == 0) return list.value;
+    else return nth(list.rest, n - 1);
+  }
 
 console.log(prepend(10, prepend(20, null)));
 console.log(arrayToList([10, 20, 30]));
